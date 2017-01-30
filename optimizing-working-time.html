@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Is it worth the time ?</title>
+
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+	integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+	crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"
+	integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r"
+	crossorigin="anonymous">
+
+<link rel="stylesheet" href="optimizing-working-time.css">
+
+</head>
+<body>
+
+
+
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-12 text-center">
+				<h1>How long to set up a profitable automated task ?</h1>
+				<h2>Optimizing working time for recurring tasks</h2>
+				<div class="small">inspired from http://xkcd.com/1205</div>
+			</div>
+		</div>
+		<div class="row">
+
+
+			<div class="col-md-3 col-md-offset-1 rounded bg-danger ">
+				<h3 class="text-center">Step 1 - Time currently spent to
+					achieve the task</h3>
+
+				<div class="form-group">
+					<label for="actualTaskDurationId">Working time spent to
+						execute the task :</label> <input id="actualTaskDurationId" type="number"
+						value="60" min="1" onchange="computeTime ();"
+						onkeyup="computeTime ();" /> <select id="actualTaskDurationUnitId"
+						name="actualTaskDurationUnit" onchange="computeTime ();">
+						<option value="pWorkingMinId">min</option>
+						<option value="pWorkingHourId">working hour</option>
+						<option value="pWorkingDayId">working day</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label for="actualTaskFrequencyId">Frequency :</label> <input
+						id="actualTaskFrequencyId" type="number" value="5" min="1"
+						onchange="computeTime ();" onkeyup="computeTime ();" /> by <select
+						id="actualTaskFrequencyUnitId" name="actualTaskFrequencyUnit"
+						onchange="computeTime ();">
+						<option value="pWorkingHourId">working hour</option>
+						<option value="pWorkingDayId">working day</option>
+						<option value="pWorkingWeekId">working week</option>
+						<option selected value="pWorkingMonthId">working month</option>
+						<option value="pWorkingYearId">working year</option>
+					</select>
+				</div>
+			</div>
+			<div class="col-md-3 col-md-offset-1 rounded bg-info">
+
+				<h3 class="text-center">Step 2 - Ideal automated task</h3>
+				<div class="form-group">
+					<label for="timeExecutionId">Working time spent to execute
+						the automated task :</label> <input id="timeExecutionId" type="number"
+						value="10" min="1" onchange="computeTime ();"
+						onkeyup="computeTime ();" /> minutes
+				</div>
+				<div class="form-group">
+					<label for="taskFrequencyId">Frequency :</label> <input
+						id="taskFrequencyId" type="number" value="5" min="1"
+						onchange="computeTime ();" onkeyup="computeTime ();" /> by <select
+						id="taskFrequencyUnitId" name="actualTaskFrequencyUnit"
+						onchange="computeTime ();">
+						<option value="pWorkingHourId">working hour</option>
+						<option value="pWorkingDayId">working day</option>
+						<option value="pWorkingWeekId">working week</option>
+						<option selected value="pWorkingMonthId">working month</option>
+						<option value="pWorkingYearId">working year</option>
+					</select>
+
+
+				</div>
+			</div>
+			<div class="col-md-2 col-md-offset-1  rounded bg-warning">
+
+				<h3 class="text-center">Step 3 - Time required to build the
+					automated task</h3>
+				<div class="form-group">
+					<label for="timePutInPlaceId"></label> <input id="timePutInPlaceId"
+						type="number" value="3" min="0" onchange="computeTime ();"
+						onkeyup="computeTime ();" /> working days
+
+				</div>
+			</div>
+			<div class="col-md-1"></div>
+
+
+		</div>
+
+		<div class="row">
+			<div class="col-md-12 text-center">
+				<h2>Results</h2>
+			</div>
+		</div>
+
+		<div id="resultZoneId" class="row">
+			<div class="col-md-3 col-md-offset-1  rounded bg-success ">
+				<h3 class="text-center">Gain in time</h3>
+				<p>
+					Profitable after : <span id="timeGainAfterId" class="then-value"></span>
+					working days.
+				</p>
+				After this step,
+				<ul>
+					<li>gain of <span id="timeGainYearId" class="then-value"></span>
+						working day / working year,
+
+					</li>
+					<li>gain of <span id="timeGainMonthId" class="then-value"></span>
+						working day / working month,
+					</li>
+					<li>gain of <span id="timeGainWeekId" class="then-value"></span>
+						working hour / working week,
+					</li>
+					<li>gain of <span id="timeGainDayId" class="then-value"></span>
+						minutes / working day.
+					</li>
+				</ul>
+			</div>
+
+
+
+
+
+			<div class="col-md-4 col-md-offset-1">
+				<div class="text-center" id="chartId"></div>
+			</div>
+
+
+			<div class="rounded parameters col-md-3 ">
+				<h3 class="text-center">Parameters</h3>
+
+
+				<input id="pWorkingMinId" type="hidden" value="1" />
+				<div class="form-group">
+					<label for="pWorkingHourId">Working Hour :</label> <input
+						id="pWorkingHourId" type="number" value="60"
+						onchange="computeTime ();" onkeyup="computeTime ();" /> minutes
+				</div>
+				<div class="form-group">
+					<label for="pWorkingDayId">Working Day :</label> <input
+						id="pWorkingDayId" type="number" value="420"
+						onchange="computeTime ();" onkeyup="computeTime ();" /> minutes
+				</div>
+				<div class="form-group">
+					<label for="pWorkingWeekId">Working Week :</label> <input
+						id="pWorkingWeekId" type="number" value="2100"
+						onchange="computeTime ();" onkeyup="computeTime ();" /> minutes
+				</div>
+				<div class="form-group">
+					<label for="pWorkingMonthId">Working Month :</label> <input
+						id="pWorkingMonthId" type="number" value="8400"
+						onchange="computeTime ();" onkeyup="computeTime ();" /> minutes
+				</div>
+				<div class="form-group">
+					<label for="pWorkingYearId">Working Year :</label> <input
+						id="pWorkingYearId" type="number" value="88200"
+						onchange="computeTime ();" onkeyup="computeTime ();" /> minutes
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+		integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+		crossorigin="anonymous"></script>
+
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/flot/0.8.3/jquery.flot.min.js">
+		
+	</script>
+	<script src="jquery.flot.axislabels.js"></script>
+	<script src="optimizing-working-time.js"></script>
+
+
+</body>
+</html>

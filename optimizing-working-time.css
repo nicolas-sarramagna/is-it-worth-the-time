@@ -1,0 +1,63 @@
+input {
+	width: 60px
+}
+
+ul {
+	margin-bottom: 0px;
+	list-style-type: square;
+}
+
+label {
+	font-weight: normal;
+}
+
+li {
+	padding-bottom: 5px;
+}
+
+#chartId {
+	width: 500px;
+	height: 300px;
+}
+
+.chart-crosspoint {
+	position: absolute;
+	color: #000;
+	font-size: small;
+	font-weight: bold;
+}
+
+.row {
+	padding-bottom: 15px;
+}
+
+.rounded {
+	border-radius: 20px;
+}
+
+.then-value {
+	font-weight: bold;
+}
+
+.parameters {
+	background-color: #fff;
+}
+
+.axis path, .axis line {
+	fill: none;
+	stroke: black;
+}
+
+path.line {
+	fill: none;
+	stroke: black;
+	stroke-width: 1px;
+}
+
+.tick text {
+	font-size: 12px;
+}
+
+.tick line {
+	opacity: 0.2;
+}
