@@ -15,6 +15,11 @@ li {
 	padding-bottom: 5px;
 }
 
+a:hover, a:visited, a:link, a:active
+{
+    text-decoration: none;
+}
+
 #chartId {
 	width: 500px;
 	height: 300px;
