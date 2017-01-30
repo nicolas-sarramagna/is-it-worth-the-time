@@ -6,7 +6,7 @@ The application use the libraries Bootstrap, jQuery and [Flot](http://www.flotch
 
 [DEMO here](https://nicolas-sarramagna.github.io/is-it-worth-the-time/)
 
-![image of the application](/screenshots/01-optimizing-working-time.png)
+[![image of the application](/screenshots/01-optimizing-working-time.png)](https://nicolas-sarramagna.github.io/is-it-worth-the-time/)
 
 ## Usage
 
