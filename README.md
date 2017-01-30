@@ -14,5 +14,5 @@ Fill the infos in the sections : **Step 1**, **Step 2** and **Step 3** and see t
 
 The section **Parameters** can be use to configure your working rates.
 
-Immediate refresh : take care onChange and onKeyUp events.
+Immediate refresh on onChange and onKeyUp events.
 
