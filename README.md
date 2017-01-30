@@ -2,7 +2,7 @@
 
 Static html-css-js application to evaluate how long you can take to set up a profitable automated task.
 
-The application use the libraries Bootstrap 3, jQuery and [Flot](http://www.flotcharts.org/) for the chart. 
+The application use the libraries Bootstrap, jQuery and [Flot](http://www.flotcharts.org/) for the chart. 
 
 [DEMO here](https://nicolas-sarramagna.github.io/is-it-worth-the-time/)
 
