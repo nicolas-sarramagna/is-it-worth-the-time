@@ -10,4 +10,6 @@ Simple static html-css-js application to evaluate how long you can take to set u
 
 Fill the infos in the sections : **Step 1**, **Step 2** and **Step 3** and see the results in the section **Gain in time** and in the **graph**.
 
-The section **Parameters** can be use to configure your working rates. 
+The section **Parameters** can be use to configure your working rates.
+
+Immediate refresh : take care onChange and onKeyUp events.
