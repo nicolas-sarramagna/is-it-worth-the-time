@@ -16,3 +16,5 @@ The section **Parameters** can be use to configure your working rates.
 
 Immediate refresh on onChange and onKeyUp events.
 
+Created by Nicolas Sarramagna
+
