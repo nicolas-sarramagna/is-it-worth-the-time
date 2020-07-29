@@ -1,4 +1,4 @@
-#Is it worth the time ?
+# Is it worth the time ?
 
 Static html-css-js application to evaluate how long you can take to set up a profitable automated task.
 
